@@ -2,6 +2,22 @@
 
 angular
 .module('shop', ['ui.router'])
+.directive('weather', function(weatherFactory)
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'partials/weather.html',
+		link: function(vm, element, attrs){
+
+			let weather = weatherFactory.getCurrentWeather(attrs.city);
+
+			weather.then(function(weatherData){
+				vm.weather = weatherData.data;
+			})
+		}
+	}
+})
+
 .config(appConfig);
 
 appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
@@ -39,7 +55,7 @@ appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'
 
 			})
 			.state('singleItemPage', {
-				url: '/:id',
+				url: '/items/:id',
 				views: {
 					'content': {
 						templateUrl: 'partials/singleItem.html',

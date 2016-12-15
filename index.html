@@ -23,6 +23,10 @@
 <header>
 	<h1>Menswear Shop</h1>
 
+	<div class="weatherContainer">
+		<weather city=Cincinnati></weather>	
+	</div>
+
 	<nav>
 		<ul>
 			<li><a ui-sref='home'>Home</a></li>
@@ -52,10 +56,12 @@
 
 <!-- Factories -->
 <script src="factories/api.js"></script>
+<script src="factories/weather.js"></script>
 
 <!-- Controllers -->
 <script src="controllers/controller.js"></script>
 <script src="controllers/singleItem.js"></script>
+<script src="controllers/weather.js"></script>
 
 
 </body>

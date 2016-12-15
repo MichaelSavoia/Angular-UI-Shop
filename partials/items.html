@@ -1,7 +1,7 @@
 <div class='items'>
 
 	<ul ng-cloak ng-repeat='item in controller.items'>
-		<li><a sref='singleItemPage{{item.id}}'>{{item.company}} {{item.name}}</a></li>
+		<li><a ui-sref='singleItemPage({id:item.id})'>{{item.company}} {{item.name}}</a></li>
 	</ul>
 	
 </div>
